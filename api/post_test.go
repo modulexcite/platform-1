@@ -894,7 +894,9 @@ func TestMakeDirectChannelVisible(t *testing.T) {
 
 	channel := Client.Must(Client.CreateDirectChannel(user2.Id)).Data.(*model.Channel)
 
-	app.MakeDirectChannelVisible(channel.Id)
+	if err := app.MakeDirectChannelVisible(channel.Id); err != nil {
+		t.Fatal(err)
+	}
 
 	if result, err := Client.GetPreference(model.PREFERENCE_CATEGORY_DIRECT_CHANNEL_SHOW, user2.Id); err != nil {
 		t.Fatal("Errored trying to set direct channel to be visible for user1")

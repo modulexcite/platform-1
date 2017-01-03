@@ -1505,7 +1505,7 @@
   },
   {
     "id": "api.post.make_direct_channel_visible.get_2_members.error",
-    "translation": "Failed to get 2 members for a direct channel channel_id=%v"
+    "translation": "Failed to get 2 members for a direct channel channel_id={{.ChannelId}}"
   },
   {
     "id": "api.post.make_direct_channel_visible.get_members.error",
